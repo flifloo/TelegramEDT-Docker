@@ -1,0 +1,11 @@
+version: '3'
+services:
+        bot:
+                build: .
+                ports:
+                        - "5002:5000"
+                volumes:
+                        - /home/docker/TelegramEDT/TelegramEDT:/TelegramEDT
+                env_file:
+                        - webhook_secret.env
+
