@@ -2,10 +2,13 @@ version: '3'
 services:
         bot:
                 build: .
-                ports:
-                        - "5002:5000"
+                networks:
+                        - nginx_web
                 volumes:
-                        - /home/docker/TelegramEDT/TelegramEDT:/TelegramEDT
+                        - ./TelegramEDT/TelegramEDT:/TelegramEDT
                 env_file:
                         - webhook_secret.env
 
+networks:
+        nginx_web:
+                external: true
