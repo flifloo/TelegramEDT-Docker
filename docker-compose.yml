@@ -5,7 +5,7 @@ services:
                 networks:
                         - nginx_web
                 volumes:
-                        - ./TelegramEDT/TelegramEDT:/TelegramEDT
+                        - ./TelegramEDT:/TelegramEDT
                 env_file:
                         - webhook_secret.env
 

@@ -13,6 +13,7 @@ if (not isdir("/TelegramEDT/alembic")) and isfile("/TelegramEDT/edt.db"):
     c = connect("/TelegramEDT/edt.db")
     c.execute("delete from alembic_version;")
     c.commit()
+    c.close()
 
 app = Flask(__name__)
 webhook_secret = environ.get("webhook_secret")
