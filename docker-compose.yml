@@ -3,12 +3,12 @@ services:
         bot:
                 build: .
                 networks:
-                        - nginx_web
+                        - nginx
                 volumes:
                         - ./TelegramEDT:/TelegramEDT
                 env_file:
                         - webhook_secret.env
 
 networks:
-        nginx_web:
+        nginx:
                 external: true
